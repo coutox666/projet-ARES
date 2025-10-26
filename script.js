@@ -90,6 +90,8 @@ function updatePosition(position) {
             console.error('Erreur Firebase:', error);
         });
 
+    // Centrer la carte sur notre position
+    map.setCenter(currentPosition);
 
     // Créer ou mettre à jour notre marqueur local
     if (!markers[deviceId]) {
@@ -97,7 +99,7 @@ function updatePosition(position) {
             position: currentPosition,
             map: map,
             title: 'Votre position',
-            label: 'Vous'
+            label: 'me'
         });
         console.log('Nouveau marqueur créé');
     } else {
@@ -125,7 +127,7 @@ function updateMarkers(positions) {
                 position: { lat: pos.lat, lng: pos.lng },
                 map: map,
                 title: 'Appareil: ' + id,
-                label: id === deviceId ? 'Vous' : 'Autre'
+                label: id === deviceId ? 'me' : 'other'
             });
         } else {
             markers[id].setPosition({ lat: pos.lat, lng: pos.lng });
