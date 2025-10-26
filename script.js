@@ -90,8 +90,6 @@ function updatePosition(position) {
             console.error('Erreur Firebase:', error);
         });
 
-    // Centrer la carte sur notre position
-    map.setCenter(currentPosition);
 
     // Créer ou mettre à jour notre marqueur local
     if (!markers[deviceId]) {
