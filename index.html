@@ -12,10 +12,27 @@
             margin: 0;
             padding: 0;
         }
+        #deviceId {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
+    <div id="deviceId">
+        ID Appareil: <span id="deviceIdText"></span>
+        <button onclick="copyDeviceId()">Copier</button>
+    </div>
     <div id="map"></div>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
     <script src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmwaHYuMLzUlok75vdbxO9KDgwiI6h1Bo&callback=initMap" async defer></script>
 </body>
