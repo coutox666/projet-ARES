@@ -79,12 +79,32 @@ function updatePosition(position) {
         timestamp: Date.now()
     };
 
+    console.log('Position reçue:', currentPosition);
+
     // Mettre à jour la position dans Firebase
-    database.ref('positions/' + deviceId).set(currentPosition);
+    database.ref('positions/' + deviceId).set(currentPosition)
+        .then(() => {
+            console.log('Position enregistrée dans Firebase');
+        })
+        .catch(error => {
+            console.error('Erreur Firebase:', error);
+        });
 
     // Centrer la carte sur notre position
-    if (!map.getCenter().equals(currentPosition)) {
-        map.setCenter(currentPosition);
+    map.setCenter(currentPosition);
+
+    // Créer ou mettre à jour notre marqueur local
+    if (!markers[deviceId]) {
+        markers[deviceId] = new google.maps.Marker({
+            position: currentPosition,
+            map: map,
+            title: 'Votre position',
+            label: 'Vous'
+        });
+        console.log('Nouveau marqueur créé');
+    } else {
+        markers[deviceId].setPosition(currentPosition);
+        console.log('Marqueur mis à jour');
     }
 }
 
