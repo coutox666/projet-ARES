@@ -6,13 +6,14 @@ let markers = {};
 
 // Configuration Firebase
 const firebaseConfig = {
-    apiKey: "VOTRE_CLE_FIREBASE",
-    authDomain: "votre-projet.firebaseapp.com",
-    databaseURL: "https://votre-projet-default-rtdb.firebaseio.com",
-    projectId: "votre-projet",
-    storageBucket: "votre-projet.appspot.com",
-    messagingSenderId: "votre-id",
-    appId: "votre-app-id"
+  apiKey: "AIzaSyB1kWrDMHvTJAI_QF5KxcWiichUIRZzT0A",
+  authDomain: "ares-745ef.firebaseapp.com",
+  databaseURL: "https://ares-745ef-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "ares-745ef",
+  storageBucket: "ares-745ef.firebasestorage.app",
+  messagingSenderId: "1058063147723",
+  appId: "1:1058063147723:web:eaa3b246b7ee0703f2314e",
+  measurementId: "G-PR6TLRBWST"
 };
 
 // Initialiser Firebase
